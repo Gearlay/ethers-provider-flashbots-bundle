@@ -916,14 +916,14 @@ export class FlashbotsBundleProvider extends AbstractProvider {
           'coinbase_transfer' in transactionDetail
             ? BigInt(transactionDetail.coinbase_transfer)
             : 'ethSentToCoinbase' in transactionDetail
-            ? BigInt(transactionDetail.ethSentToCoinbase)
-            : 0n
+              ? BigInt(transactionDetail.ethSentToCoinbase)
+              : 0n
         const totalMinerReward =
           'total_miner_reward' in transactionDetail
             ? BigInt(transactionDetail.total_miner_reward)
             : 'coinbaseDiff' in transactionDetail
-            ? BigInt(transactionDetail.coinbaseDiff)
-            : 0n
+              ? BigInt(transactionDetail.coinbaseDiff)
+              : 0n
         const priorityFeeReceivedByMiner = totalMinerReward - ethSentToCoinbase
         return {
           gasUsed: acc.gasUsed + gasUsed,
