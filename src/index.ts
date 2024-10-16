@@ -51,6 +51,7 @@ export interface FlashbotsOptions {
   maxTimestamp?: number
   revertingTxHashes?: Array<string>
   droppingTxHashes?: Array<string>
+  uuid?: string
   replacementUuid?: string
 }
 
@@ -385,6 +386,7 @@ export class FlashbotsBundleProvider extends AbstractProvider {
       maxTimestamp: opts?.maxTimestamp,
       revertingTxHashes: opts?.revertingTxHashes,
       droppingTxHashes: opts?.droppingTxHashes,
+      uuid: opts?.uuid,
       replacementUuid: opts?.replacementUuid
     }
 
